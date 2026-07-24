@@ -18,7 +18,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     dataicoApiKey: '',
-    dataicoApiBase: 'https://api.dataico.com',
+    dataicoApiBase: 'https://api.dataico.com/dataico_api/v2',
     public: {
       apiBase: '/api'
     }
