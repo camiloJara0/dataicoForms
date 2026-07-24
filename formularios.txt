@@ -1,0 +1,114 @@
+POST Nota Credito{
+  "actions": {
+    "send_dian": true,
+    "send_email": true
+  },
+  "credit_note": {
+    "env": "PRODUCCION",
+    "dataico_account_id": "002979c5-7c23-43ab-aa98-3fa7dce6e4d0",
+    "number": 120,
+    "invoice_id": "90b21392-f2c3-4279-a141-5b97f95a79f9",
+    "issue_date": "23/10/2019 13:22:43",
+    "sin_factura_referenciada": false,
+    "reason": "AJUSTE",
+    "items": [
+      {
+        "sku": "SKU_1234",
+        "description": "Camisa",
+        "quantity": 2,
+        "price": 100,
+        "taxes": [
+          {
+            "tax_rate": 19,
+            "tax_category": "IVA"
+          }
+        ]
+      }
+    ]
+  }
+}
+{
+  "errors": {
+    "number": [
+      "Es requirido"
+    ],
+    "issue_date": "La fecha '2019-03-01' es inválida. El formato tiene que ser 'dd/MM/yyyy' o 'dd/MM/yyyy HH:mm:ss'"
+  }
+}
+
+POST Documento Soporte {
+  "support_doc": {
+    "issue_date": "21/02/2019",
+    "charges": [
+      {
+        "base_amount": 1200,
+        "reason": "Envios",
+        "discount": true
+      }
+    ],
+    "items": [
+      {
+        "sku": "REF_PAN_001",
+        "price": 2300,
+        "quantity": 10,
+        "description": "Pan grand con miel",
+        "discount_rate": 10.5,
+        "taxes": [
+          {
+            "tax_category": "IVA",
+            "tax_rate": 19,
+            "tax_amount": 190
+          }
+        ],
+        "retentions": [
+          {
+            "tax_category": "RET_IVA",
+            "tax_rate": 15
+          }
+        ]
+      }
+    ],
+    "payment_means_type": "CREDITO",
+    "retentions": [
+      {
+        "tax_category": "RET_IVA",
+        "tax_rate": 15
+      }
+    ],
+    "number": "120",
+    "numbering": {
+      "resolution_number": "18760000001",
+      "prefix": "SD"
+    },
+    "resident-type": "RESIDENTE",
+    "payment_date": "23/02/2019 13:22:43",
+    "env": "PRODUCCION",
+    "customer": {
+      "department": "ANTIOQUIA o 05",
+      "address_line": "Calle 12",
+      "party_type": "PERSONA_JURIDICA",
+      "city": "MEDELLIN o 001",
+      "tax_level_code": "SIMPLIFICADO",
+      "email": "test@email.com",
+      "country_code": "CO",
+      "first_name": "string",
+      "phone": "string",
+      "party_identification_type": "TE",
+      "company_name": "string",
+      "family_name": "string",
+      "regimen": "AUTORRETENEDOR",
+      "party_identification": "132322333"
+    },
+    "payment_means": "CREDIT_ACH"
+  }
+}
+
+{
+  "errors": [
+    {
+      "type": "string",
+      "message": "string",
+      "path": "string"
+    }
+  ]
+}
